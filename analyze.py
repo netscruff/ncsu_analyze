@@ -2,6 +2,11 @@ import numpy as np
 import sys
 from matplotlib import pyplot as plt
 
+# some comments about what this script does
+# which will certainly conflict with what netscruff
+# is typing because I have ignored the instructions about 
+# multi-line comments
+
 def analyze(filename, outputfile):
     data = np.loadtxt(fname=filename, delimiter=',')
     
