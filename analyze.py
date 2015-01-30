@@ -2,7 +2,7 @@ import numpy as np
 import sys
 from matplotlib import pyplot as plt
 
-def analyze(filename):
+def analyze(filename, outputfile):
     data = np.loadtxt(fname=filename, delimiter=',')
     
     plt.figure(figsize=(10.0, 3.0))
@@ -20,9 +20,11 @@ def analyze(filename):
     plt.plot(data.min(0))
     
     plt.tight_layout()
-    plt.show()
+    # we just change from showing the plot to saving the
+    # plot to a file
+    plt.savefig(outputfile)
 
 script = sys.argv[0]
 inputfile = sys.argv[1]
 outputfile = sys.argv[2]
-analyze(inputfile)
+analyze(inputfile, outputfile)
